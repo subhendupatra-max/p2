@@ -49,17 +49,17 @@ class Cms extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function contant_reviewer(){
-        return $this->belongsTo(User::class);
+    public function english_contant_reviewer(){
+        return $this->belongsTo(User::class,'contant_reviewer_id');
     }
-    public function contant_approver(){
-        return $this->belongsTo(User::class);
+    public function english_contant_approver(){
+        return $this->belongsTo(User::class,'contant_approver_id');
     }
     public function hindi_contant_reviewer(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'hindi_reviewer_id');
     }
     public function hindi_contant_approver(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'hindi_approver_id');
     }
     public function href(){
       return $this->redirect_to == 1 ? $this->link : ($this->redirect_to == 2 ? localized_route('details',[$this->uuid]) : ($this->redirect_to == 3 ? url('details/'.$this->uuid) : '#'));

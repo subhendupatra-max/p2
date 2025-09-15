@@ -31,7 +31,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row approve_review">
-                                    @if (auth()->user()->can('all-status-change') || auth()->user()->id == $details->en_contant_writter_id)
+                                    @if (auth()->user()->can('content-approve-review') || auth()->user()->id == $details->en_contant_writter_id)
                                         <div class="col-md-2">
                                             <div class="mb-3">
                                                 <label for="status" class="form-label">English Writting</label>
@@ -48,7 +48,7 @@
                                             </div>
                                         </div>
                                     @endif
-                                    @if (auth()->user()->can('all-status-change') || auth()->user()->id == $details->hi_contant_writter_id)
+                                    @if (auth()->user()->can('content-approve-review') || auth()->user()->id == $details->hi_contant_writter_id)
                                         <div class="col-md-2">
                                             <div class="mb-3">
                                                 <label for="status" class="form-label">Hindi Writting</label>
@@ -64,7 +64,7 @@
                                             </div>
                                         </div>
                                     @endif
-                                    @if (auth()->user()->can('all-status-change') || auth()->user()->id == $details->contant_reviewer_id)
+                                    @if ((auth()->user()->can('content-approve-review') || auth()->user()->id == $details->contant_reviewer_id) && $details->english_contant_creator_status == 1)
                                         <div class="col-md-2">
                                             <div class="mb-3">
                                                 <label for="status" class="form-label">English Review</label>
@@ -79,7 +79,7 @@
                                             </div>
                                         </div>
                                     @endif
-                                    @if (auth()->user()->can('all-status-change') || auth()->user()->id == $details->hindi_reviewer_id)
+                                    @if ((auth()->user()->can('content-approve-review') || auth()->user()->id == $details->hindi_reviewer_id) && $details->hindi_contant_creator_status == 1)
                                         <div class="col-md-2">
                                             <div class="mb-3">
                                                 <label for="status" class="form-label">Hindi Review</label>
@@ -95,7 +95,7 @@
                                             </div>
                                         </div>
                                     @endif
-                                    @if (auth()->user()->can('all-status-change') || auth()->user()->id == $details->contant_approver_id)
+                                    @if ((auth()->user()->can('content-approve-review') || auth()->user()->id == $details->contant_approver_id) && $details->review_status == 1)
                                         <div class="col-md-2">
                                             <div class="mb-3">
                                                 <label for="status" class="form-label">English Approval</label>
@@ -110,7 +110,7 @@
                                             </div>
                                         </div>
                                     @endif
-                                    @if (auth()->user()->can('all-status-change') || auth()->user()->id == $details->hindi_approver_id)
+                                    @if ((auth()->user()->can('content-approve-review') || auth()->user()->id == $details->hindi_approver_id) && $details->hindi_reviewer_status == 1)
                                         <div class="col-md-2">
                                             <div class="mb-3">
                                                 <label for="status" class="form-label">Hindi Approval</label>
@@ -195,10 +195,19 @@
                                             {{ $details->en_contant_writter->name ?? 'N/A' }}</p>
                                         <p><strong style="color:blue">Content Writer (HI):</strong>
                                             {{ $details->hi_contant_writter->name ?? 'N/A' }}</p>
-                                        <p><strong style="color:blue">Content Approver:</strong>
-                                            {{ $details->contant_approver->name ?? 'N/A' }}</p>
-                                        <p><strong style="color:blue">Content Reviewer:</strong>
-                                            {{ $details->contant_reviewer->name ?? 'N/A' }}</p>
+
+                                        <p><strong style="color:blue">English Content Reviewer:</strong>
+                                            {{ $details->english_contant_reviewer->name ?? 'N/A' }}</p>
+
+                                        <p><strong style="color:blue">Hindi Content Reviewer:</strong>
+                                            {{ $details->hindi_contant_reviewer->name ?? 'N/A' }}</p>
+
+                                        <p><strong style="color:blue">English Content Approver:</strong>
+                                            {{ $details->english_contant_approver->name ?? 'N/A' }}</p>
+
+                                        <p><strong style="color:blue">Hindi Content Approver:</strong>
+                                            {{ $details->hindi_contant_approver->name ?? 'N/A' }}</p>
+
                                         <p><strong style="color:blue">Date:</strong> {{ $details->date ?? 'N/A' }}</p>
                                         <p><strong style="color:blue">Publish Date:</strong>
                                             {{ $details->publish_date ?? 'N/A' }}</p>

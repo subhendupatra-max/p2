@@ -133,6 +133,24 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                 <div class="col-md-2 pt-4">
+                                                    <div class="form-group">
+                                                        <label for="hindi_reviewer_id" class="label-style">Hindi Content
+                                                            Reviewer</label>
+                                                        <span class="text-danger">*</span>
+                                                        <select name="hindi_reviewer_id"
+                                                            class="form-control fromAlias select222"
+                                                            id="hindi_reviewer_id">
+                                                            <option value="">--- select one ----</option>
+                                                            @forelse ($hindi_contant_reviewers as $hindi_contant_reviewer)
+                                                                <option value="{{ $hindi_contant_reviewer->id }}"
+                                                                    @if ($details) {{ $hindi_contant_reviewer->id == $details->hindi_reviewer_id ? 'selected' : '' }} @endif>
+                                                                    {{ $hindi_contant_reviewer->name }}</option>
+                                                            @empty
+                                                            @endforelse
+                                                        </select>
+                                                    </div>
+                                                </div>
                                                 <div class="col-md-2 pt-4">
                                                     <div class="form-group">
                                                         <label for="hindi_approver_id" class="label-style">Hindi Content
@@ -151,24 +169,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-2 pt-4">
-                                                    <div class="form-group">
-                                                        <label for="hindi_reviewer_id" class="label-style">Hindi Content
-                                                            Approver</label>
-                                                        <span class="text-danger">*</span>
-                                                        <select name="hindi_reviewer_id"
-                                                            class="form-control fromAlias select222"
-                                                            id="hindi_reviewer_id">
-                                                            <option value="">--- select one ----</option>
-                                                            @forelse ($hindi_contant_reviewers as $hindi_contant_reviewer)
-                                                                <option value="{{ $hindi_contant_reviewer->id }}"
-                                                                    @if ($details) {{ $hindi_contant_reviewer->id == $details->hindi_reviewer_id ? 'selected' : '' }} @endif>
-                                                                    {{ $hindi_contant_reviewer->name }}</option>
-                                                            @empty
-                                                            @endforelse
-                                                        </select>
-                                                    </div>
-                                                </div>
+
                                             </div>
                                             <div class="row taskSection">
                                                 <div class="col-md-3 pt-4">

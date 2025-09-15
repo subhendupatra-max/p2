@@ -136,7 +136,7 @@
                                                 <span class="menu-link {{ sidebarActive(['admin.aipr-master.*']) }}">
                                                     <span class="menu-icon">
                                                         <span class="svg-icon svg-icon-2">
-                                                            <i class="fa-solid fa-paperclip"></i>
+                                                            <i class="fa-solid fa-coins"></i>
                                                         </span>
                                                     </span>
                                                     <span class="menu-title">Manage AIPR Finance</span>

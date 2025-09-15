@@ -123,13 +123,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-lg-4 col-md-12 col-12">
-                                                <div>
-                                                    <a href="{{ localized_route('page.show', [$main_menu->slug]) }}" class="btn btn-primary" >
-                                                        {{ __('messages.reset') }}
-                                                    </a>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

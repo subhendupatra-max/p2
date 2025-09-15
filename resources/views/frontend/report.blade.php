@@ -88,7 +88,7 @@
                                         </div>
                                         <div class="our-organization-form-div">
                                             <div class="row">
-                                                <div class="col-lg-6 col-md-12 col-12">
+                                                <div class="col-lg-4 col-md-12 col-12">
                                                     <div class="form-item-1">
                                                         <img src="{{ asset('frontend') }}/assets/images/bar.png"
                                                             alt="...">
@@ -113,7 +113,7 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-lg-6 col-md-12 col-12">
+                                                <div class="col-lg-4 col-md-12 col-12">
                                                     <div class="form-item-1">
                                                         <img src="{{ asset('frontend') }}/assets/images/folder.png"
                                                             alt="...">
@@ -134,6 +134,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -167,7 +168,7 @@
                                         @endforelse
                                     </tbody>
                                 </table>
-                                  {!! $reportDatas->appends(request()->all())->links('pagination::bootstrap-5') !!}
+                                {!! $reportDatas->appends(request()->all())->links('pagination::bootstrap-5') !!}
                             </div>
                         </div>
                     </div>

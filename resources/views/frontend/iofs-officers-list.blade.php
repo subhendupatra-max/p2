@@ -86,12 +86,11 @@
                                     </div>
                                     <div class="our-organization-form-div">
                                         <div class="row">
-                                         <div class="col-lg-4 col-md-12 col-12">
+                                            <div class="col-lg-3 col-md-12 col-12">
                                                 <div class="form-item-1">
                                                     <img src="{{ asset('frontend') }}/assets/images/bar.png"
                                                         alt="...">
-                                                    <select name="unit" id="unit"
-                                                        onchange="this.form.submit()">
+                                                    <select name="unit" id="unit" onchange="this.form.submit()">
                                                         <option value="">----
                                                             {{ __('messages.select_unit') }} ----</option>
                                                         @forelse ($units as $unit)
@@ -103,12 +102,11 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-md-12 col-12">
+                                            <div class="col-lg-3 col-md-12 col-12">
                                                 <div class="form-item-1">
                                                     <img src="{{ asset('frontend') }}/assets/images/bar.png"
                                                         alt="...">
-                                                    <select name="grade" id="grade"
-                                                        onchange="this.form.submit()">
+                                                    <select name="grade" id="grade" onchange="this.form.submit()">
                                                         <option value="">----
                                                             {{ __('messages.select_grade') }} ----</option>
                                                         @forelse ($grades as $grade)
@@ -120,7 +118,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-4 col-md-12 col-12">
+                                            <div class="col-lg-3 col-md-12 col-12">
                                                 <div class="form-item-1">
                                                     <img src="{{ asset('frontend') }}/assets/images/folder.png"
                                                         alt="...">
@@ -141,11 +139,15 @@
                                                     </select>
                                                 </div>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </form>
-                            <div><p>{{ __('messages.last_updated_date') }} : {{ date('d-m-Y', strtotime($iofs_officers?->first()?->created_at)) }}</p></div>
+                            <div>
+                                <p>{{ __('messages.last_updated_date') }} :
+                                    {{ date('d-m-Y', strtotime($iofs_officers?->first()?->created_at)) }}</p>
+                            </div>
                             <div class="row">
 
                                 <table class="table table-bordered">
@@ -176,7 +178,7 @@
                                         @endforelse
                                     </tbody>
                                 </table>
-                                  {!! $iofs_officers->appends(request()->all())->links('pagination::bootstrap-5') !!}
+                                {!! $iofs_officers->appends(request()->all())->links('pagination::bootstrap-5') !!}
                             </div>
                         </div>
                     </div>
