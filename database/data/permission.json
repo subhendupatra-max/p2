@@ -1,0 +1,404 @@
+{
+    "permissions": [
+        {
+            "name": "All Unit",
+            "group_by": "Unit Permission"
+        },
+        {
+            "name": "Specific Unit",
+            "group_by": "Unit Permission"
+        },
+        {
+            "name": "User List",
+            "group_by": "User"
+        },
+        {
+            "name": "Add User",
+            "group_by": "User"
+        },
+        {
+            "name": "Edit User",
+            "group_by": "User"
+        },
+        {
+            "name": "Delete User",
+            "group_by": "User"
+        },
+        {
+            "name": "User Status Change",
+            "group_by": "User"
+        },
+        {
+            "name": "Banner List",
+            "group_by": "Banner"
+        },
+        {
+            "name": "Add Banner",
+            "group_by": "Banner"
+        },
+        {
+            "name": "Edit Banner",
+            "group_by": "Banner"
+        },
+        {
+            "name": "Delete Banner",
+            "group_by": "Banner"
+        },
+        {
+            "name": "Banner Status Change",
+            "group_by": "Banner"
+        },
+        {
+            "name": "All Content",
+            "group_by": "Content"
+        },
+        {
+            "name": "My Content",
+            "group_by": "Content"
+        },
+        {
+            "name": "Add Content",
+            "group_by": "Content"
+        },
+        {
+            "name": "Edit Content",
+            "group_by": "Content"
+        },
+        {
+            "name": "View Content",
+            "group_by": "Content"
+        },
+        {
+            "name": "Delete Content",
+            "group_by": "Content"
+        },
+        {
+            "name": "Content Status Change",
+            "group_by": "Content"
+        },
+        {
+            "name": "Content Approve Review",
+            "group_by": "Content"
+        },
+        {
+            "name": "Archived Content",
+            "group_by": "Content"
+        },
+        {
+            "name": "Archived to Active Content",
+            "group_by": "Content"
+        },
+        {
+            "name": "Active Content",
+            "group_by": "Content"
+        },
+        {
+            "name": "Add Edit All Content Details",
+            "group_by": "Content"
+        },
+        {
+            "name": "Add Edit Hindi Content Details",
+            "group_by": "Content"
+        },
+        {
+            "name": "Add Edit English Content Details",
+            "group_by": "Content"
+        },
+        {
+            "name": "All Status Change",
+            "group_by": "Content"
+        },
+        {
+            "name": "Designation List",
+            "group_by": "Designation"
+        },
+        {
+            "name": "Add Designation",
+            "group_by": "Designation"
+        },
+        {
+            "name": "Edit Designation",
+            "group_by": "Designation"
+        },
+        {
+            "name": "Delete Designation",
+            "group_by": "Designation"
+        },
+        {
+            "name": "Designation Status Change",
+            "group_by": "Designation"
+        },
+        {
+            "name": "Unit List",
+            "group_by": "Unit"
+        },
+        {
+            "name": "Add Unit",
+            "group_by": "Unit"
+        },
+        {
+            "name": "Edit Unit",
+            "group_by": "Unit"
+        },
+        {
+            "name": "Delete Unit",
+            "group_by": "Unit"
+        },
+        {
+            "name": "Unit Status Change",
+            "group_by": "Unit"
+        },
+        {
+            "name": "Aipr Master List",
+            "group_by": "Aipr Master"
+        },
+        {
+            "name": "Add Aipr Master",
+            "group_by": "Aipr Master"
+        },
+        {
+            "name": "Edit Aipr Master",
+            "group_by": "Aipr Master"
+        },
+        {
+            "name": "Delete Aipr Master",
+            "group_by": "Aipr Master"
+        },
+        {
+            "name": "Aipr Master Status Change",
+            "group_by": "Aipr Master"
+        },
+        {
+            "name": "Aipr Master Approval",
+            "group_by": "Aipr Master"
+        },
+        {
+            "name": "Menu List",
+            "group_by": "Menu"
+        },
+        {
+            "name": "Add Menu",
+            "group_by": "Menu"
+        },
+        {
+            "name": "Edit Menu",
+            "group_by": "Menu"
+        },
+        {
+            "name": "Delete Menu",
+            "group_by": "Menu"
+        },
+        {
+            "name": "Menu Status Change",
+            "group_by": "Menu"
+        },
+        {
+            "name": "Category List",
+            "group_by": "Category"
+        },
+        {
+            "name": "Add Category",
+            "group_by": "Category"
+        },
+        {
+            "name": "Edit Category",
+            "group_by": "Category"
+        },
+        {
+            "name": "Delete Category",
+            "group_by": "Category"
+        },
+        {
+            "name": "Category Status Change",
+            "group_by": "Category"
+        },
+        {
+            "name": "Hod List",
+            "group_by": "Hod"
+        },
+        {
+            "name": "Add Hod",
+            "group_by": "Hod"
+        },
+        {
+            "name": "Edit Hod",
+            "group_by": "Hod"
+        },
+        {
+            "name": "Delete Hod",
+            "group_by": "Hod"
+        },
+        {
+            "name": "Hod Status Change",
+            "group_by": "Hod"
+        },
+        {
+            "name": "Section List",
+            "group_by": "Section"
+        },
+        {
+            "name": "Section Status Change",
+            "group_by": "Section"
+        },
+        {
+            "name": "Archived Document",
+            "group_by": "Document"
+        },
+        {
+            "name": "Active Document",
+            "group_by": "Document"
+        },
+        {
+            "name": "Document List",
+            "group_by": "Document"
+        },
+        {
+            "name": "Add Document",
+            "group_by": "Document"
+        },
+        {
+            "name": "Edit Document",
+            "group_by": "Document"
+        },
+        {
+            "name": "Delete Document",
+            "group_by": "Document"
+        },
+        {
+            "name": "Document Status Change",
+            "group_by": "Document"
+        },
+        {
+            "name": "Archived to Active Document",
+            "group_by": "Document"
+        },
+        {
+            "name": "Team List",
+            "group_by": "Team"
+        },
+        {
+            "name": "Add Team",
+            "group_by": "Team"
+        },
+        {
+            "name": "Edit Team",
+            "group_by": "Team"
+        },
+        {
+            "name": "Delete Team",
+            "group_by": "Team"
+        },
+        {
+            "name": "Team Status Change",
+            "group_by": "Team"
+        },
+        {
+            "name": "Aipr List",
+            "group_by": "Aipr"
+        },
+        {
+            "name": "Add Aipr",
+            "group_by": "Aipr"
+        },
+        {
+            "name": "Edit Aipr",
+            "group_by": "Aipr"
+        },
+        {
+            "name": "Delete Aipr",
+            "group_by": "Aipr"
+        },
+        {
+            "name": "Aipr Status Change",
+            "group_by": "Aipr"
+        },
+        {
+            "name": "Feedback List",
+            "group_by": "Feedback"
+        },
+        {
+            "name": "Reply Feedback",
+            "group_by": "Feedback"
+        },
+        {
+            "name": "Role List",
+            "group_by": "Role"
+        },
+        {
+            "name": "Add Role",
+            "group_by": "Role"
+        },
+        {
+            "name": "Edit Role",
+            "group_by": "Role"
+        },
+        {
+            "name": "Delete Role",
+            "group_by": "Role"
+        },
+        {
+            "name": "Give Permission",
+            "group_by": "Role"
+        },
+        {
+            "name": "Activity Log",
+            "group_by": "Activity Log"
+        },
+        {
+            "name": "Website Setting List",
+            "group_by": "Website Setting"
+        },
+        {
+            "name": "Edit Website Setting",
+            "group_by": "Website Setting"
+        },
+        {
+            "name": "Notification List",
+            "group_by": "Notification"
+        },
+        {
+            "name": "Total User",
+            "group_by": "Dashboard"
+        },
+        {
+            "name": "Total Unit",
+            "group_by": "Dashboard"
+        },
+        {
+            "name": "Total Unit Admin",
+            "group_by": "Dashboard"
+        },
+        {
+            "name": "Total Approver",
+            "group_by": "Dashboard"
+        },
+        {
+            "name": "Total Reviewer",
+            "group_by": "Dashboard"
+        },
+        {
+            "name": "Task List",
+            "group_by": "Dashboard"
+        },
+        {
+            "name": "Media List",
+            "group_by": "Media"
+        },
+        {
+            "name": "Add Media",
+            "group_by": "Media"
+        },
+        {
+            "name": "Edit Media",
+            "group_by": "Media"
+        },
+        {
+            "name": "Delete Media",
+            "group_by": "Media"
+        },
+        {
+            "name": "Media Status Change",
+            "group_by": "Media"
+        }
+    ]
+}

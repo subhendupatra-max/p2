@@ -1,0 +1,30 @@
+php artisan migrate --path=database/migrations/2024_11_20_101421_create_programs_table.php
+php artisan make:migration add_payment_type_to_payment_table --table=payment
+php artisan db:seed --class=Database\\Seeders\\PermissionSeeder
+php artisan db:seed --class=Database\\Seeders\\SuperAdminSeeder
+
+php artisan db:seed --class=PermissionSeeder
+php artisan db:seed --class=SuperAdminSeeder
+
+hindi-content-reviewer
+hindi-content-approver
+
+
+
+create section
+..................
+our-history
+our-unit
+our-unit
+
+
+
+sudo apt-get install php-xml php-mbstring php-zip php-gd
+sudo service apache2 restart   # or php-fpm restart
+
+
+
+1 = english writing Incomplete
+2 = hindi writing Incomplete
+1 = english writing done
+2 = hindi writing done
