@@ -81,6 +81,10 @@
             "group_by": "Content"
         },
         {
+            "name": "Edit After Approve Content",
+            "group_by": "Content"
+        },
+        {
             "name": "Archived Content",
             "group_by": "Content"
         },

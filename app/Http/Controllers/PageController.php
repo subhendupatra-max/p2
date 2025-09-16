@@ -199,7 +199,10 @@ class PageController extends Controller
             $query->where('slug','announcements');
         })->orderBy('position','ASC')->where('is_active',1)->latest()->get();
 
-        $hod_details = Hod::where('unit_id',$unit_id)->where('is_active',1)->where('from_date','<=',date('Y-m-d'))->where('to_date','>=',date('Y-m-d'))->latest()->first();
+        $hod_details = Hod::where('unit_id',$unit_id)->where('is_active',1)->where('from_date','<=',date('Y-m-d'))->where(function($q){
+            $q->whereNull('to_date')->orWhere('to_date','>=',date('Y-m-d'));
+        })
+        ->latest()->first();
 
         $schemes_and_services = Cms::where('approve_status','1')->where('is_archived',0)->where('review_status','1')->where(function($q) use($today){
         $q->where('publish_date','<=',$today)->orwhere('expire_date','>=',$today)->orwhereNull('expire_date'); })->whereHas('menu',function($q){

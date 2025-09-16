@@ -306,7 +306,7 @@
                                             </div>
                                             <div class="col-md-3 pt-4">
                                                 <div class="form-group">
-                                                    <label for="date" class="label-style">Publish Date</label>
+                                                    <label for="date" class="label-style">Publish Date <span class="text-danger">*</span></label>
                                                     <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip"
                                                         data-bs-placement="top"
                                                         title="If you don't set any publish date then, when content writer and approver are not needed, the content will be published on the content created date and if both are needed, the content will be published when both are approved"></i>

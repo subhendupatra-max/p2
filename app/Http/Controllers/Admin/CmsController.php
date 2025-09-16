@@ -80,11 +80,11 @@ class CmsController extends BaseController
         if ($request->post()) {
             $id = $request->id ?? NULL;
             $rules = [
-                'title_en' => 'nullable',
-                'title_hi' => 'nullable',
-                'description_en' => 'nullable',
-                'description_hi' => 'nullable',
-                'task' => 'nullable',
+                'title_en' => $request->need_content_writter == 'no' ? 'required' : 'nullable',
+                'title_hi' => $request->need_content_writter == 'no' ? 'required' : 'nullable',
+                'description_en' => $request->need_content_writter == 'no' ? 'required' : 'nullable',
+                'description_hi' => $request->need_content_writter == 'no' ? 'required' : 'nullable',
+                'task' => $request->need_content_writter == 'yes' ? 'required' : 'nullable',
                 'link' => 'sometimes',
                 'date' => 'sometimes',
                 'unit_id' => 'sometimes|required|exists:units,id',
@@ -99,7 +99,7 @@ class CmsController extends BaseController
                 'contant_reviewer_id' => $request->need_content_writter == 'yes' ? 'required|exists:users,id' : 'nullable|exists:users,id',
                 'hindi_approver_id' => $request->need_content_writter == 'yes' ? 'required|exists:users,id' : 'nullable|exists:users,id',
                 'hindi_reviewer_id' => $request->need_content_writter == 'yes' ? 'required|exists:users,id' : 'nullable|exists:users,id',
-                'publish_date' => $request->need_content_writter == 'no' ? 'required|date' : 'nullable|date',
+                'publish_date' => 'required|date',
                 'expire_date' => 'nullable|date',
                 'otp' => 'required',
                 'digits:6',
@@ -315,11 +315,11 @@ class CmsController extends BaseController
             $id = $request->id ?? NULL;
             if (auth()->user()->can('add-edit-all-content-details')) {
                 $rules = [
-                    'title_en' => 'nullable',
-                    'title_hi' => 'nullable',
-                    'description_en' => 'nullable',
-                    'description_hi' => 'nullable',
-                    'task' => 'nullable',
+                    'title_en' => $request->need_content_writter == 'no' ? 'required' : 'nullable',
+                    'title_hi' => $request->need_content_writter == 'no' ? 'required' : 'nullable',
+                    'description_en' => $request->need_content_writter == 'no' ? 'required' : 'nullable',
+                    'description_hi' => $request->need_content_writter == 'no' ? 'required' : 'nullable',
+                    'task' => $request->need_content_writter == 'yes' ? 'required' : 'nullable',
                     'link' => 'sometimes',
                     'date' => 'sometimes',
                     'unit_id' => 'sometimes|required|exists:units,id',
@@ -334,7 +334,7 @@ class CmsController extends BaseController
                     'contant_reviewer_id' => $request->need_content_writter == 'yes' ? 'required|exists:users,id' : 'nullable|exists:users,id',
                     'hindi_reviewer_id' => $request->need_content_writter == 'yes' ? 'required|exists:users,id' : 'nullable|exists:users,id',
                     'hindi_approver_id' => $request->need_content_writter == 'yes' ? 'required|exists:users,id' : 'nullable|exists:users,id',
-                    'publish_date' => $request->need_content_writter == 'no' ? 'required|date' : 'nullable|date',
+                    'publish_date' => 'required|date',
                     'expire_date' => 'nullable|date',
                     'otp' => 'required',
                     'digits:6',

@@ -19,12 +19,12 @@
                 </div>
 
                 @can('add-content')
-                <div class="d-flex align-items-center gap-2 gap-lg-3">
-                    <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
-                        <button type="button" class="btn btn-dark goTo" data-action="{{ route('admin.content.add') }}">Add
-                            Content</button>
+                    <div class="d-flex align-items-center gap-2 gap-lg-3">
+                        <div class="d-flex justify-content-end" data-kt-customer-table-toolbar="base">
+                            <button type="button" class="btn btn-dark goTo" data-action="{{ route('admin.content.add') }}">Add
+                                Content</button>
+                        </div>
                     </div>
-                </div>
                 @endcan
             </div>
             <ul class="nav nav-tabs mb-5" id="contentTabs" role="tablist">
@@ -73,16 +73,10 @@
                                             </thead>
                                             <tbody class="fw-semibold text-gray-600">
                                                 @forelse ($details_active as $content)
-                                                {{--  <?php dd($content->id,
-                                                                $content->hindi_contant_creator_status,
-                                                                    $content->english_contant_creator_status,
-                                                                    $content->hindi_reviewer_status,
-                                                                    $content->review_status,
-                                                                    $content->hindi_approver_status,
-                                                                    $content->approve_status); ?>  --}}
+                                                    {{--  <?php dd($content->id, $content->hindi_contant_creator_status, $content->english_contant_creator_status, $content->hindi_reviewer_status, $content->review_status, $content->hindi_approver_status, $content->approve_status); ?>  --}}
                                                     <tr id="{{ $content->id }}">
                                                         <td class="text-center">{{ $loop->iteration }}</td>
-                                                         <td class="text-center">{{ $content->task ?? 'N/A' }}</td>
+                                                        <td class="text-center">{{ $content->task ?? 'N/A' }}</td>
                                                         <td class="text-center">{{ $content->title_en ?? 'N/A' }}</td>
                                                         <td class="text-center">{{ $content->unit->title_en ?? 'N/A' }}</td>
                                                         <td class="text-center">{{ $content->menu->menu_path ?? 'N/A' }}</td>
@@ -170,7 +164,7 @@
                                                                     $content->approve_status == 0)
                                                                 <badge class="badge badge-info">Hindi Content Reviewed</badge>
                                                             @elseif (
-                                                                    $content->hindi_contant_creator_status == 1 &&
+                                                                $content->hindi_contant_creator_status == 1 &&
                                                                     $content->english_contant_creator_status == 1 &&
                                                                     $content->hindi_reviewer_status == 1 &&
                                                                     $content->review_status == 1 &&
@@ -203,17 +197,35 @@
                                                                 data-kt-menu-placement="bottom-end">Actions</a>
                                                             <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-125px py-4"
                                                                 data-kt-menu="true">
-                                                                 @can('view-content')
-                                                                <div class="menu-item px-3">
-                                                                    <a class="menu-link px-3"
-                                                                        href="{{ route('admin.content.view', $content->uuid) }}">View</a>
-                                                                </div>
-                                                                 @endcan
-                                                                @can('edit-content')
+                                                                @can('view-content')
                                                                     <div class="menu-item px-3">
                                                                         <a class="menu-link px-3"
-                                                                            href="{{ route('admin.content.edit', $content->uuid) }}">Edit</a>
+                                                                            href="{{ route('admin.content.view', $content->uuid) }}">View</a>
                                                                     </div>
+                                                                @endcan
+                                                                @can('edit-content')
+                                                                    @if ((
+                                                                        $content->hindi_contant_creator_status == 1 &&
+                                                                            $content->english_contant_creator_status == 1 &&
+                                                                            $content->hindi_reviewer_status == 1 &&
+                                                                            $content->review_status == 1 &&
+                                                                            $content->hindi_approver_status == 1 &&
+                                                                            $content->approve_status == 1) && (
+                                                                                auth()->user()->can('edit-after-approve-content')
+                                                                            ))
+                                                                        <div class="menu-item px-3">
+                                                                            <a class="menu-link px-3"
+                                                                                href="{{ route('admin.content.edit', $content->uuid) }}">Edit</a>
+                                                                        </div>
+                                                                        @else
+                                                                        @endif
+
+                                                                    @else
+                                                                        <div class="menu-item px-3">
+                                                                            <a class="menu-link px-3"
+                                                                                href="{{ route('admin.content.edit', $content->uuid) }}">Edit</a>
+                                                                        </div>
+                                                                    @endif
                                                                 @endcan
                                                                 @can('delete-content')
                                                                     <div class="menu-item px-3">
@@ -224,13 +236,13 @@
                                                                     </div>
                                                                 @endcan
                                                                 @can('archived-to-active-content')
-                                                                <div class="menu-item px-3">
-                                                                    <a href="javascript:void(0)" data-table="cms"
-                                                                        data-uuid="{{ $content->uuid }}"
-                                                                        class="menu-link px-3 custom-data-table convertActiveArchivedData"
-                                                                        data-kt-customer-table-filter="delete_row">Covert into
-                                                                        Archived Mode</a>
-                                                                </div>
+                                                                    <div class="menu-item px-3">
+                                                                        <a href="javascript:void(0)" data-table="cms"
+                                                                            data-uuid="{{ $content->uuid }}"
+                                                                            class="menu-link px-3 custom-data-table convertActiveArchivedData"
+                                                                            data-kt-customer-table-filter="delete_row">Covert into
+                                                                            Archived Mode</a>
+                                                                    </div>
                                                                 @endcan
                                                             </div>
                                                         </td>
@@ -298,13 +310,13 @@
                                                                 data-kt-menu="true">
 
                                                                 @can('archived-to-active-content')
-                                                                <div class="menu-item px-3">
-                                                                    <a href="javascript:void(0)" data-table="cms"
-                                                                        data-uuid="{{ $content->uuid }}"
-                                                                        class="menu-link px-3 custom-data-table convertActiveArchivedData"
-                                                                        data-kt-customer-table-filter="delete_row">Covert into
-                                                                        Active Mode</a>
-                                                                </div>
+                                                                    <div class="menu-item px-3">
+                                                                        <a href="javascript:void(0)" data-table="cms"
+                                                                            data-uuid="{{ $content->uuid }}"
+                                                                            class="menu-link px-3 custom-data-table convertActiveArchivedData"
+                                                                            data-kt-customer-table-filter="delete_row">Covert into
+                                                                            Active Mode</a>
+                                                                    </div>
                                                                 @endcan
 
                                                             </div>

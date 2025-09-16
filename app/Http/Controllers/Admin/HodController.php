@@ -31,23 +31,20 @@ class HodController extends BaseController
         if ($request->post()) {
             $id = $request->id ?? NULL;
             $rules = [
-                'hod_name' => 'required',
-                'designation' => 'required',
+                'hod_name_en' => 'required',
+                'designation_en' => 'required',
+                'hod_name_hi' => 'required',
+                'designation_hi' => 'required',
                 'from_date' => 'required',
-                'to_date' => 'required',
                 'unit_id' => 'required',
                 'from_date' => 'required',
-                'to_date' => 'required',
                 'otp' => 'required', 'digits:6',
                 'captcha'  => 'required'
 
             ];
 
             $messages = [
-                'hod_name.required' => 'HOD Name is required.',
-                'designation.required' => 'Designation is required.',
                 'from_date.required' => 'From Date is required.',
-                'to_date.required' => 'To Date is required.',
                 'unit_id.required' => 'Unit is required.',
                 'otp.required' => 'OTP is required',
                 'otp.digits' => 'OTP must be 6 digits',
@@ -75,8 +72,10 @@ class HodController extends BaseController
                     return $response;
                 }
                 $postData = [
-                    'hod_name' => $request->hod_name,
-                    'designation' => $request->designation,
+                    'hod_name_en' => $request->hod_name_en,
+                    'designation_en' => $request->designation_en,
+                    'hod_name_hi' => $request->hod_name_hi,
+                    'designation_hi' => $request->designation_hi,
                     'from_date' => $request->from_date,
                     'to_date' => $request->to_date,
                     'unit_id' => $request->unit_id,

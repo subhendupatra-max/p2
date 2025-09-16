@@ -367,57 +367,6 @@ class AjaxController extends BaseController
         $contant = Cms::find($request->id);
         $field = $request->field;
         $contant->update([$field => $request->value]);
-        // if($request->value == 0){
-        //     $contant->hindi_contant_creator_status = 0;
-        //     $contant->english_contant_creator_status = 0;
-        //     $contant->hindi_reviewer_status = 0;
-        //     $contant->review_status = 0;
-        //     $contant->hindi_approver_status = 0;
-        //     $contant->approve_status = 0;
-        // }elseif($request->value == 1){
-        //     $contant->hindi_contant_creator_status = 0;
-        //     $contant->english_contant_creator_status = 1;
-        //     $contant->hindi_reviewer_status = 0;
-        //     $contant->review_status = 0;
-        //     $contant->hindi_approver_status = 0;
-        //     $contant->approve_status = 0;
-        // }elseif($request->value == 2){
-        //     $contant->hindi_contant_creator_status = 1;
-        //     $contant->english_contant_creator_status = 1;
-        //     $contant->hindi_reviewer_status = 0;
-        //     $contant->review_status = 0;
-        //     $contant->hindi_approver_status = 0;
-        //     $contant->approve_status = 0;
-        // }elseif($request->value == 3){
-        //     $contant->hindi_contant_creator_status = 1;
-        //     $contant->english_contant_creator_status = 1;
-        //     $contant->hindi_reviewer_status = 0;
-        //     $contant->review_status = 1;
-        //     $contant->hindi_approver_status = 0;
-        //     $contant->approve_status = 0;
-        // }elseif($request->value == 4){
-        //      $contant->hindi_contant_creator_status = 1;
-        //     $contant->english_contant_creator_status = 1;
-        //     $contant->hindi_reviewer_status = 1;
-        //     $contant->review_status = 1;
-        //     $contant->hindi_approver_status = 0;
-        //     $contant->approve_status = 0;
-        // }elseif($request->value == 5){
-        //      $contant->hindi_contant_creator_status = 1;
-        //     $contant->english_contant_creator_status = 1;
-        //     $contant->hindi_reviewer_status = 1;
-        //     $contant->review_status = 1;
-        //     $contant->hindi_approver_status = 0;
-        //     $contant->approve_status = 1;
-        // }elseif($request->value == 6){
-        //      $contant->hindi_contant_creator_status = 1;
-        //     $contant->english_contant_creator_status = 1;
-        //     $contant->hindi_reviewer_status =1;
-        //     $contant->review_status = 1;
-        //     $contant->hindi_approver_status = 1;
-        //     $contant->approve_status = 1;
-        //     $contant->publish_date = $contant->publish_date == null ? Carbon::now()->format('Y-m-d') : $contant->publish_date;
-        // }
         $contant->save();
         return $this->responseJson(true, 200, 'Status Change Successfully');
     }

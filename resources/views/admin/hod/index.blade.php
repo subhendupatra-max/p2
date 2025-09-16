@@ -47,8 +47,8 @@
                                     @forelse ($details as $hod)
                                         <tr>
                                             <td class="text-center">{{ $loop->iteration }}</td>
-                                            <td class="text-center">{{ $hod->hod_name ?? 'N/A' }}</td>
-                                            <td class="text-center">{{ $hod->designation ?? 'N/A' }}</td>
+                                            <td class="text-center">{{ $hod->hod_name_en ?? 'N/A' }}</td>
+                                            <td class="text-center">{{ $hod->designation_en ?? 'N/A' }}</td>
                                             <td class="text-center">{{ $hod->unit?->title_en ?? 'N/A' }}</td>
                                             <td class="text-center">{{ date('d/m/Y', strtotime($hod->from_date)) ?? 'N/A' }}</td>
                                             <td class="text-center">{{ date('d/m/Y', strtotime($hod->to_date)) ?? 'N/A' }}</td>

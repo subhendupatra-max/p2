@@ -180,10 +180,10 @@
                                             </div>
                                             <div class="about-sec-image-content">
                                                 <h6>
-                                                    {!! $hod_details?->hod_name ?? '' !!}
+                                                    {!! localized_field($hod_details, 'hod_name') !!}
                                                 </h6>
                                                 <p>
-                                                    {!! $hod_details?->designation ?? '' !!}
+                                                    {!! localized_field($hod_details, 'designation') !!}
                                                 </p>
                                             </div>
                                         </div>

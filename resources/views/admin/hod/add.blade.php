@@ -99,20 +99,39 @@
                                         <div class="row align-items-end">
                                             <div class="col-md-6 pt-4">
                                                 <div class="form-group">
-                                                    <label for="hod_name" class="label-style">HOD Name</label>
+                                                    <label for="hod_name_en" class="label-style">HOD Name(en)</label>
                                                     <span class="text-danger">*</span>
                                                     <input type="text" class="form-control fromAlias"
-                                                        placeholder="Type Here" name="hod_name" id="hod_name"
-                                                        value="{{ $details->hod_name ?? null }}">
+                                                        placeholder="Type Here" name="hod_name_en" id="hod_name_en"
+                                                        value="{{ $details->hod_name_en ?? null }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 pt-4">
                                                 <div class="form-group">
-                                                    <label for="designation" class="label-style">Designation</label>
+                                                    <label for="designation_en" class="label-style">Designation(en)</label>
                                                     <span class="text-danger">*</span>
                                                     <input type="text" class="form-control fromAlias"
-                                                        placeholder="Enter Title" name="designation" id="designation"
-                                                        value="{{ $details->designation ?? null }}">
+                                                        placeholder="Enter Designation" name="designation_en" id="designation_en"
+                                                        value="{{ $details->designation_en ?? null }}">
+                                                </div>
+                                            </div>
+
+                                             <div class="col-md-6 pt-4">
+                                                <div class="form-group">
+                                                    <label for="hod_name_hi" class="label-style">HOD Name(HI)</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input type="text" class="form-control fromAlias"
+                                                        placeholder="Type Here" name="hod_name_hi" id="hod_name_hi"
+                                                        value="{{ $details->hod_name_hi ?? null }}">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 pt-4">
+                                                <div class="form-group">
+                                                    <label for="designation_hi" class="label-style">Designation(HI)</label>
+                                                    <span class="text-danger">*</span>
+                                                    <input type="text" class="form-control fromAlias"
+                                                        placeholder="Enter Designation" name="designation_hi" id="designation_hi"
+                                                        value="{{ $details->designation_hi ?? null }}">
                                                 </div>
                                             </div>
 
@@ -146,7 +165,6 @@
                                             <div class="col-md-6 pt-4">
                                                 <div class="form-group">
                                                     <label for="to_date" class="label-style">To Date</label>
-                                                    <span class="text-danger">*</span>
                                                     <input type="date" class="form-control fromAlias" name="to_date"
                                                         id="to_date" value="{{ $details->to_date ?? null }}">
                                                 </div>

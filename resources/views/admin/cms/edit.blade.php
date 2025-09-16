@@ -133,7 +133,7 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                 <div class="col-md-2 pt-4">
+                                                <div class="col-md-2 pt-4">
                                                     <div class="form-group">
                                                         <label for="hindi_reviewer_id" class="label-style">Hindi Content
                                                             Reviewer</label>
@@ -193,13 +193,31 @@
                                                         <label for="title_en" class="label-style">Title(en)</label>
                                                         <span class="text-danger">*</span>
                                                         <input type="text" class="form-control fromAlias"
-
                                                             placeholder="Enter Title" name="title_en" id="title_en"
                                                             value="{{ $details->title_en ?? null }}">
                                                     </div>
                                                 </div>
+
+                                                @if (!auth()->user()->can('add-edit-all-content-details'))
+                                                    <div class="col-md-6 pt-4">
+                                                        <div class="form-group">
+                                                            <label for="title_hi" class="label-style">Title(hi)</label>
+                                                            <span class="text-danger">*</span>
+                                                            {{ $details->title_hi ?? null }}
+                                                        </div>
+                                                    </div>
+                                                @endif
                                             @endif
                                             @if (auth()->user()->can('add-edit-hindi-content-details') || auth()->user()->can('add-edit-all-content-details'))
+                                                @if (!auth()->user()->can('add-edit-all-content-details'))
+                                                    <div class="col-md-6 pt-4">
+                                                        <div class="form-group">
+                                                            <label class="label-style">Title(en)</label>
+                                                            <span class="text-danger">*</span>
+                                                            {{ $details->title_en ?? null }}
+                                                        </div>
+                                                    </div>
+                                                @endif
                                                 <div class="col-md-6 pt-4">
                                                     <div class="form-group">
                                                         <label for="title_hi" class="label-style">Title(hi)</label>
@@ -323,7 +341,8 @@
                                                 </div>
                                                 <div class="col-md-3 pt-4">
                                                     <div class="form-group">
-                                                        <label for="date" class="label-style">Publish Date</label>
+                                                        <label for="date" class="label-style">Publish
+                                                            Date</label><span class="text-danger">*</span>
                                                         <i class="fa-solid fa-circle-info" data-bs-toggle="tooltip"
                                                             data-bs-placement="top"
                                                             title="If you don't set any publish date then, when content writer and approver are not needed, the content will be published on the content created date and if both are needed, the content will be published when both are approved"></i>
@@ -351,18 +370,32 @@
                                                     <div class="form-group">
                                                         <label for="description_en"
                                                             class="label-style">Description(en)</label>
-                                                        <textarea class="form-control" name="description_en"
-                                                            id="description_en" cols="30" rows="4">{{ $details->description_en ?? null }}</textarea>
+                                                        <textarea class="form-control" name="description_en" id="description_en" cols="30" rows="4">{{ $details->description_en ?? null }}</textarea>
                                                     </div>
                                                 </div>
+                                                @if (!auth()->user()->can('add-edit-all-content-details'))
+                                                    <div class="col-md-12 pt-4">
+                                                        <div class="form-group">
+                                                            <label class="label-style">Description(hi)</label>
+                                                            <div>{!! $details->description_hi ?? null !!}</div>
+                                                        </div>
+                                                    </div>
+                                                @endif
                                             @endif
                                             @if (auth()->user()->can('add-edit-hindi-content-details') || auth()->user()->can('add-edit-all-content-details'))
+                                                @if (!auth()->user()->can('add-edit-all-content-details'))
+                                                    <div class="col-md-12 pt-4">
+                                                        <div class="form-group">
+                                                            <label class="label-style">Description(en)</label>
+                                                            <div>{!! $details->description_en ?? null !!}</div>
+                                                        </div>
+                                                    </div>
+                                                @endif
                                                 <div class="col-md-12 pt-4">
                                                     <div class="form-group">
                                                         <label for="description_hi"
                                                             class="label-style">Description(hi)</label>
-                                                        <textarea class="form-control" name="description_hi"
-                                                            id="description_hi" cols="30" rows="4">{{ $details->description_hi ?? null }}</textarea>
+                                                        <textarea class="form-control" name="description_hi" id="description_hi" cols="30" rows="4">{{ $details->description_hi ?? null }}</textarea>
                                                     </div>
                                                 </div>
                                             @endif
